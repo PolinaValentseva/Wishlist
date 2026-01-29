@@ -80,7 +80,7 @@ h1 {
 }
 
 .block h2 {
-  color: #667eea;
+  color: #9c33e7;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
 }
@@ -95,7 +95,7 @@ h1 {
   background: #f8fafc;
   padding: 1.5rem;
   border-radius: 8px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #9c33e7;
 }
 
 .field label {
@@ -126,7 +126,7 @@ h1 {
   content: "→";
   position: absolute;
   left: 0;
-  color: #667eea;
+  color: #9c33e7;
   font-weight: bold;
 }
 </style>

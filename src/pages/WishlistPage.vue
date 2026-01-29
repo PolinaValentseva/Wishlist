@@ -117,7 +117,7 @@ h1 {
 }
 
 .block h2 {
-  color: #667eea;
+  color: #9c33e7;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
 }
@@ -155,7 +155,7 @@ h1 {
   content: "•";
   position: absolute;
   left: 0;
-  color: #667eea;
+  color: #9c33e7;
   font-weight: bold;
 }
 
@@ -164,7 +164,8 @@ h1 {
 }
 
 .toggle-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #400069;
+  background: linear-gradient(90deg,rgba(64, 0, 105, 1) 0%, rgba(119, 33, 181, 1) 53%, rgba(64, 0, 105, 1) 100%);
   color: white;
   border: none;
   padding: 0.875rem 1.5rem;
@@ -202,7 +203,7 @@ h1 {
   background: white;
   padding: 1rem;
   border-radius: 6px;
-  border-left: 3px solid #667eea;
+  border-left: 3px solid #9c33e7;
 }
 
 .field.actions {

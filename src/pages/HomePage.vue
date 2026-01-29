@@ -70,7 +70,7 @@ h1 {
 }
 
 .block h2 {
-  color: #667eea;
+  color: #9c33e7;
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
@@ -96,7 +96,7 @@ h1 {
   content: "✓";
   position: absolute;
   left: 0;
-  color: #667eea;
+  color: #9c33e7;
   font-weight: bold;
 }
 </style>
