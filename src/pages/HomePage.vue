@@ -3,7 +3,7 @@
     <h1>Главная страница</h1>
     <p class="subtitle">Лендинг - привлечение пользователей</p>
     <router-link to="/profile">
-        <button>Войти</button>
+        <button>Профиль</button>
     </router-link>
     <router-link to="/create">
         <button>Создать вишлист</button>
