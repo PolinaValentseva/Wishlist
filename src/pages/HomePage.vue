@@ -2,16 +2,15 @@
   <div class="container">
     <h1>Главная страница</h1>
     <p class="subtitle">Лендинг - привлечение пользователей</p>
-    <router-link to="/profile">
-        <button>Профиль</button>
-    </router-link>
     <router-link to="/create">
-        <button>Создать вишлист</button>
+        <AppButton variant="primary">Создать вишлист</AppButton>
     </router-link>
   </div>
 </template>
 
 <script setup lang="ts">
+import AppButton from '../components/AppButton.vue';
+
 </script>
 
 <style scoped>

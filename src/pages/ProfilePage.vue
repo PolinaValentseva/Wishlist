@@ -3,12 +3,13 @@
     <h1>Профиль</h1>
     <p class="subtitle">Управление вишлистами</p>
     <router-link to="/create">
-        <button>Создать вишлист</button>
+        <AppButton variant="primary">Создать вишлист</AppButton>
     </router-link>
   </div>
 </template>
 
 <script setup lang="ts">
+import AppButton from '../components/AppButton.vue';
 </script>
 
 <style scoped>
