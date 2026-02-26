@@ -2,9 +2,9 @@
   <div class="container">
     <h1>Профиль</h1>
     <p class="subtitle">Управление вишлистами</p>
-    <router-link to="/create">
+    <RouterLink to="/create">
         <AppButton variant="primary">Создать вишлист</AppButton>
-    </router-link>
+    </RouterLink>
   </div>
 </template>
 

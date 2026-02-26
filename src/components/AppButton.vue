@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 
-export type ButtonVariant = 'primary' | 'outline'
+export type ButtonVariant = 'primary' | 'outline' | 'white'
 
 const props = defineProps<{
   variant: ButtonVariant
@@ -34,8 +34,7 @@ const props = defineProps<{
 }
 
 .button--primary:hover {
-    background: inherit;
-    color: #000;
+    transform: translateY(-5px);
 }
 
 .button--outline {
@@ -45,8 +44,20 @@ const props = defineProps<{
 }
 
 .button--outline:hover {
-    background: #f8859c;
-    color: #FFF;
+    transform: translateY(-5px);
+}
+
+.button--white {
+    background: var(--color-white);
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 30px;
+    color: #333;
+    transition-duration: 0.25s;
+}
+
+.button--white:hover {
+    transform: translateY(-10px);
 }
 
 </style>

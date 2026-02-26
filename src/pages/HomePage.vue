@@ -1,15 +1,15 @@
 <template>
-  <div class="container">
-    <h1>Главная страница</h1>
-    <p class="subtitle">Лендинг - привлечение пользователей</p>
-    <router-link to="/create">
-        <AppButton variant="primary">Создать вишлист</AppButton>
-    </router-link>
+  <div>
+    <HeroSection />
+    <HowItWorks />
+    <FeatureSection />
   </div>
 </template>
 
 <script setup lang="ts">
-import AppButton from '../components/AppButton.vue';
+import FeatureSection from '@/components/home/FeatureSection.vue';
+import HeroSection from '@/components/home/HeroSection.vue';
+import HowItWorks from '@/components/home/HowItWorks.vue';
 
 </script>
 

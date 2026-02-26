@@ -1,25 +1,25 @@
 <template>
     <div class="header">
         <div class="header-inner container">
-            <router-link to="/">
+            <RouterLink to="/">
                 <img
                     class="header__logo logo"
                     src="../assets/logo.svg"
                     alt=""
                     width="50" height="47"
                 >
-            </router-link>
+            </RouterLink>
             <nav class="header__menu">
                 <ul class="header__menu-list">
                     <li class="header__menu-item">
-                        <router-link to="/create">
+                        <RouterLink to="/create">
                             <AppButton variant="outline">Создать вишлист</AppButton>
-                        </router-link>
+                        </RouterLink>
                     </li>
                     <li class="header__menu-item">
-                        <router-link to="/profile">
+                        <RouterLink to="/profile">
                             <AppButton variant="primary">Войти</AppButton>
-                        </router-link>
+                        </RouterLink>
                     </li>
                 </ul>
             </nav>
@@ -39,6 +39,7 @@ import AppButton from './AppButton.vue';
     left: 0;
     background: #fff;
     width: 100%;
+    z-index: 100;
 }
 
 .header-inner {

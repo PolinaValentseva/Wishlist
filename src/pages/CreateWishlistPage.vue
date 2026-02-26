@@ -2,9 +2,9 @@
   <div class="container">
     <h1>Создание вишлиста</h1>
     <p class="subtitle">Информация о событии (Название, дата, описание)</p>
-    <router-link to="/wishlist/:id">
+    <RouterLink to="/wishlist/:id">
         <AppButton variant="primary">Создать</AppButton>
-    </router-link>
+    </RouterLink>
   </div>
 </template>
 
