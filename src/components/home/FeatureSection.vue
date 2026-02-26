@@ -1,7 +1,7 @@
 <template>
     <div class="inner">
         <div class="body">
-          <h1 class="title">Ты лучше знаешь, что тебе нужно</h1>
+          <h2 class="title">Ты лучше знаешь, что тебе нужно</h2>
           <p class="subtitle">Избавь близких от сложных догадок и мук выбора — просто поделись своим списком желаний и получай именно те подарки, о которых мечтаешь</p>
           <RouterLink to="/create">
               <AppButton variant="primary" class="button">Создать вишлист</AppButton>

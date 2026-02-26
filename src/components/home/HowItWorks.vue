@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="title">Как это работает?</h1>
+    <h2 class="title">Как это работает?</h2>
     <ul class="list">
         <li class="item">
             <img
