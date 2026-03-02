@@ -8,21 +8,7 @@
         </RouterLink>
     </div>
 
-    <div class="decor-circle">
-        <svg width="905" height="905" viewBox="0 0 1491 1618" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g filter="url(#filter0_f_2023_102)">
-            <circle cx="538.5" cy="665.5" r="452.5" fill="#FF00BF" fill-opacity="0.5" />
-          </g>
-          <defs>
-            <filter id="filter0_f_2023_102" x="-414" y="-287" width="1905" height="1905" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="250" result="effect1_foregroundBlur_2023_102" />
-            </filter>
-          </defs>
-        </svg>
-    </div>
-    <div class="decor-gift">
+    <div class="decor-gift" aria-hidden="true">
         <svg width="175" height="193" viewBox="0 0 225 243" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M47.0398 0.00412546C43.0131 0.0765379 39.3861 1.07855 36.3738 3.04297C31.7846 6.0385 29.1412 11.0294 28.3432 16.2505C26.748 26.694 31.2615 38.751 40.5535 48.6257C49.8443 58.4991 64.3297 65.9923 82.9918 65.9923H84.4906L78.8852 54.7071C65.2414 53.7453 55.2418 48.0371 48.5859 40.9642C41.2795 33.2 38.416 23.5951 39.2797 17.9469C39.7113 15.1222 40.7564 13.4598 42.3916 12.3928C44.0268 11.3258 46.7643 10.6135 51.4629 11.5722C59.5027 13.2123 72.5078 20.2047 89.7037 35.8854L90.5348 35.0468H104.925C83.218 13.5087 66.6781 3.31034 53.6607 0.653983C52.0549 0.320976 50.4262 0.112823 48.7887 0.0313614C48.1982 0.00330417 47.6152 -0.00618971 47.0398 0.00412546ZM177.96 0.00412546C177.385 -0.00536449 176.802 0.00371678 176.211 0.0313614C174.636 0.105631 173.008 0.312963 171.34 0.653983C158.322 3.31034 141.781 13.5087 120.076 35.0468H134.465L135.296 35.8848C152.492 20.2041 165.497 13.2123 173.536 11.5716C178.235 10.6122 180.973 11.3252 182.608 12.3922C184.243 13.4592 185.288 15.1216 185.72 17.9457C186.583 23.5939 183.72 33.1987 176.414 40.963C169.758 48.0371 159.758 53.7447 146.114 54.7065L140.509 65.9923H142.008C160.67 65.9923 175.156 58.4998 184.447 48.6257C193.739 38.751 198.252 26.694 196.657 16.2505C195.859 11.0294 193.215 6.0385 188.626 3.04297C185.614 1.07855 181.987 0.0765379 177.96 0.00412546ZM95.1209 46.1872L89.7234 51.6193L96.2484 64.7545H128.753L135.276 51.6193L129.88 46.1872L95.1221 46.1872H95.1209ZM0 75.8948L0 104.365L87.2951 104.365V75.8948L0 75.8948ZM98.3607 75.8948L98.3607 243H126.639L126.639 75.8948H98.3607ZM137.705 75.8948L137.705 104.365L225 104.365L225 75.8948L137.705 75.8948ZM19.6721 115.505L19.6721 243H87.2951L87.2951 115.505L19.6721 115.505ZM137.705 115.505V243H205.328V115.505H137.705Z" fill="white" fill-opacity="0.3" />
         </svg>
@@ -42,11 +28,24 @@ import AppButton from '@/components/AppButton.vue';
 
 .inner {
     position: relative;
-    background-color: #f8859c;
+    background-color: var(--color-primary);
     width: 100vw;
-    padding: 230px 60px 172px 150px;
+    padding: 230px 60px 210px 150px;
     margin-bottom: 135px;
-    
+    overflow-x: hidden;
+}
+
+.inner::before {
+  content: "";
+  position: absolute;
+  width: 725px;
+  height: 725px;
+  border-radius: 50%;
+  background: rgba(255, 0, 191, 0.5);
+  filter: blur(200px);
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .body {

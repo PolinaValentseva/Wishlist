@@ -57,7 +57,7 @@ const props = defineProps<{
 }
 
 .button--white:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 
 </style>

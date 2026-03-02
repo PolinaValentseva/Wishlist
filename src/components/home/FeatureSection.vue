@@ -31,6 +31,7 @@ import AppButton from '@/components/AppButton.vue';
     gap: 30px;
     background: rgba(255, 142, 182, 0.15);
     padding: 75px 50px 75px 50px;
+    margin-bottom: 75px;
 }
 
 .title {
