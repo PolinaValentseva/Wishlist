@@ -29,6 +29,11 @@ main {
   top: 91px;
 }
 
+@media(max-width: 600px) {
+  main {
+    top: 72px;
+  }
+}
 
 .container {
   max-width: 1720px;

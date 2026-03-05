@@ -20,7 +20,7 @@ const props = defineProps<{
 <style scoped>
 
 .button {
-    border: 3px solid #f8859c;
+    border: none;
     border-radius: 8px;
     padding: 12px 29px;
     font-size: 14px;
@@ -30,6 +30,7 @@ const props = defineProps<{
 
 .button--primary {
     background: #f8859c;
+    border: 3px solid #f8859c;
     color: #FFF;
 }
 
@@ -58,6 +59,22 @@ const props = defineProps<{
 
 .button--white:hover {
     transform: translateY(-5px);
+}
+
+@media(max-width: 1100px) {
+    .button--white {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 600px) {
+    .button {
+        padding: 8px 20px;
+    }
+
+    .button--white {
+        font-size: 16px;
+    }
 }
 
 </style>
