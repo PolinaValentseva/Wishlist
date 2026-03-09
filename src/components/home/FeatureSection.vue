@@ -47,8 +47,7 @@ import AppButton from '@/components/AppButton.vue';
 }
 
 .button {
-    font-weight: 800;
-    font-size: 30px;
+    font-size: 22px;
 }
 
 @media(max-width: 1100px) {

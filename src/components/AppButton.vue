@@ -50,9 +50,8 @@ const props = defineProps<{
 
 .button--white {
     background: var(--color-white);
-    border-radius: 30px;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 22px;
     color: #333;
     transition-duration: 0.25s;
 }
