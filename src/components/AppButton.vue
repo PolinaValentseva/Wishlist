@@ -29,9 +29,9 @@ const props = defineProps<{
 }
 
 .button--primary {
-    background: #f8859c;
-    border: 3px solid #f8859c;
-    color: #FFF;
+    background: var(--color-primary);
+    border: 3px solid var(--color-primary);
+    color: var(--color-white);
 }
 
 .button--primary:hover {
@@ -40,8 +40,8 @@ const props = defineProps<{
 
 .button--outline {
     background: inherit;
-    color: #000;
-    border: 3px solid #f8859c;
+    color: var(--color-black);
+    border: 3px solid var(--color-primary);
 }
 
 .button--outline:hover {
@@ -52,7 +52,7 @@ const props = defineProps<{
     background: var(--color-white);
     font-weight: 500;
     font-size: 22px;
-    color: #333;
+    color: var(--color-text-gray);
     transition-duration: 0.25s;
 }
 

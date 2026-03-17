@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import AppButton from './AppButton.vue';
+import AppButton from '@/components/AppButton.vue';
 import { ref } from 'vue';
 
 const isMenuOpen = ref(false);
@@ -61,10 +61,10 @@ const closeMenu = () => {
     position: fixed;
     top: 0;
     left: 0;
-    background: #fff;
+    background: var(--color-white);
     width: 100%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+    z-index: 2;
 }
 
 .header-inner {
@@ -87,7 +87,7 @@ const closeMenu = () => {
     height: 21px;
     background: transparent;
     border: none;
-    z-index: 101;
+    z-index: 2;
 }
 
 .burger-btn span {
@@ -131,7 +131,7 @@ const closeMenu = () => {
         right: -100%;
         width: 100%;
         height: 100vh;
-        background: #fff;
+        background: var(--color-white);
         transition: right 0.3s ease;
         padding-top: 80px;
     }

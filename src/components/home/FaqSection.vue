@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import FaqItem from './FaqItem.vue';
+import FaqItem from '@/components/home/FaqItem.vue';
 
 const activeIndex = ref<number | null>(null);
 
@@ -54,7 +54,7 @@ const faqItems = [
 <style scoped>
 .faq {
     padding: 80px 0;
-    background-color: rgba(255, 142, 182, 0.06);
+    background-color: var(--color-bg-lighter);
     margin-bottom: 75px;
 }
 

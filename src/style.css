@@ -4,8 +4,19 @@
 :root {
   --font-family: "Roboto", sans-serif;
   --second-family: "Inter", sans-serif;
+
   --color-white: #fff;
+  --color-black: #000;
   --color-primary: #f8859c;
+
+  --color-text-gray: #333;
+  --color-text-gray-light: #555;
+
+  --color-bg-light: rgba(255, 142, 182, 0.15);
+  --color-bg-lighter: rgba(255, 142, 182, 0.06);
+  --color-bg-overlay: rgba(255, 255, 255, 0.3);
+
+  --color-blur: rgba(255, 0, 191, 0.5);
 }
 
 * {

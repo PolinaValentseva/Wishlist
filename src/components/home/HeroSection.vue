@@ -41,7 +41,7 @@ import AppButton from '@/components/AppButton.vue';
   width: 725px;
   height: 725px;
   border-radius: 50%;
-  background: rgba(255, 0, 191, 0.5);
+  background: var(--color-blur);
   filter: blur(200px);
   top: 0;
   left: 0;
@@ -50,7 +50,7 @@ import AppButton from '@/components/AppButton.vue';
 
 .body {
     position: relative;
-    z-index: 10;
+    z-index: 1;
 }
 
 .title {

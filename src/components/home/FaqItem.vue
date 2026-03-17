@@ -1,10 +1,10 @@
 <template>
-    <div class="item" :class="{ 'item--active': isActive }">
+    <div class="item" :class="{ 'item--active': props.isActive }">
         <button
             class="question"
             @click="$emit('toggle')"
         >
-            <span>{{ question }}</span>
+            <span>{{ props.question }}</span>
             <span class="icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -12,20 +12,20 @@
             </span>
         </button>
         <div v-if="isActive" class="answer">
-            <p>{{ answer }}</p>
+            <p>{{ props.answer }}</p>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 
-defineProps<{
+const props = defineProps<{
     question: string;
     answer: string;
     isActive: boolean;
 }>();
 
-defineEmits<{
+const emits = defineEmits<{
     toggle: [];
 }>();
 
@@ -33,7 +33,7 @@ defineEmits<{
 
 <style scoped>
 .item {
-    background: #fff;
+    background: var(--color-white);
     border-radius: 12px;
     margin-bottom: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -81,7 +81,7 @@ defineEmits<{
 .answer p {
     font-size: 16px;
     line-height: 1.6;
-    color: #555;
+    color: var(--color-text-gray-light);
 }
 
 @media(max-width: 768px) {

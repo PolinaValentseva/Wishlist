@@ -30,7 +30,7 @@ import AppButton from '@/components/AppButton.vue';
     align-items: center;
     justify-content: center;
     gap: 30px;
-    background: rgba(255, 142, 182, 0.15);
+    background: var(--color-bg-light);
     padding: 75px 50px 75px 50px;
 }
 
