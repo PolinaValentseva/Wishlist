@@ -11,6 +11,11 @@
 
   --color-text-gray: #333;
   --color-text-gray-light: #555;
+  --color-text-gray-super-light: #dfdfdf;
+
+  --color-border: #e0e0e0;
+  --color-error: #e74c3c;
+  --color-muted: #999;
 
   --color-bg-light: rgba(255, 142, 182, 0.15);
   --color-bg-lighter: rgba(255, 142, 182, 0.06);
@@ -26,18 +31,14 @@
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-family: var(--font-family);
   overflow-x: hidden;
 }
 
-
 main {
   position: relative;
   top: 91px;
+  margin-bottom: 91px;
 }
 
 @media(max-width: 600px) {

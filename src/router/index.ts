@@ -3,6 +3,7 @@ import HomePage from '@/pages/HomePage.vue'
 import ProfilePage from '@/pages/ProfilePage.vue'
 import CreateWishlistPage from '@/pages/CreateWishlistPage.vue'
 import WishlistPage from '@/pages/WishlistPage.vue'
+import ShareWishlistPage from '@/pages/ShareWishlistPage.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/wishlist/:id',
     name: 'wishlist',
     component: WishlistPage
+  },
+  {
+    path: '/share/:id',
+    name: 'share-wishlist',
+    component: ShareWishlistPage
   }
 ]
 

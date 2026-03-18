@@ -55,7 +55,6 @@ const faqItems = [
 .faq {
     padding: 80px 0;
     background-color: var(--color-bg-lighter);
-    margin-bottom: 75px;
 }
 
 .title {
