@@ -39,6 +39,7 @@ main {
   position: relative;
   top: 91px;
   margin-bottom: 91px;
+  min-height: 100dvh;
 }
 
 @media(max-width: 600px) {

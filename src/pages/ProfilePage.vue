@@ -6,7 +6,7 @@
         <p class="profile-page__subtitle">Управление вишлистами</p>
       </div>
       <RouterLink to="/create">
-        <AppButton variant="primary">Создать вишлист</AppButton>
+        <AppButton>Создать вишлист</AppButton>
       </RouterLink>
     </div>
 
@@ -22,44 +22,40 @@
         v-for="wishlist in wishlists"
         :key="wishlist.id"
         :wishlist="wishlist"
-        @edit="handleEdit(wishlist.id)"
-        @delete="handleDelete(wishlist.id)"
-        @share="handleShare(wishlist.id)"
+        @edit="editWishlist(wishlist.id)"
+        @delete="deleteWishlist(wishlist.id)"
+        @share="shareWishlist(wishlist.id)"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
-import AppButton from '@/components/AppButton.vue';
-import WishlistCard from '@/components/profile/WishlistCard.vue';
-import { getAllWishlists, deleteWishlist, type Wishlist } from '@/utils/storage';
+import AppButton from '@/components/ui/AppButton.vue';
+import WishlistCard from '@/components/wishlist/WishlistCard.vue';
+import { useWishlist } from '@/composables/useWishlist';
+import { copyToClipboard } from '@/utils/copyToClipboard';
 
 const router = useRouter();
-const wishlists = ref<Wishlist[]>([]);
+const { wishlists, loadAllWishlists, removeWishlist } = useWishlist();
 
 onMounted(() => {
-  wishlists.value = getAllWishlists();
+  loadAllWishlists();
 });
 
-const handleEdit = (id: string) => {
-  // Пока просто переходим на страницу вишлиста
-  // В будущем — открытие модального окна редактирования
+const editWishlist = (id: string) => {
   router.push(`/wishlist/${id}`);
 };
 
-const handleDelete = (id: string) => {
-  deleteWishlist(id);
-  wishlists.value = getAllWishlists();
+const deleteWishlist = (id: string) => {
+  removeWishlist(id);
 };
 
-const handleShare = (id: string) => {
+const shareWishlist = (id: string) => {
   const shareUrl = `${window.location.origin}/share/${id}`;
-  navigator.clipboard.writeText(shareUrl)
-    .then(() => alert('Ссылка скопирована в буфер обмена!'))
-    .catch(() => alert('Не удалось скопировать ссылку'));
+  copyToClipboard(shareUrl);
 };
 </script>
 

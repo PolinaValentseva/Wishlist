@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="wishlist-form">
+  <form @submit.prevent="createWishlist" class="wishlist-form">
     <div class="form-group">
       <label for="title" class="form-label">Название вишлиста</label>
       <input
@@ -44,57 +44,27 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import AppButton from '@/components/AppButton.vue';
+import AppButton from '@/components/ui/AppButton.vue';
+import { validateWishlistForm } from '@/utils/validation';
+import type { IWishlistFormData, IValidationErrors } from '@/types';
 
-interface FormData {
-  title: string;
-  date: string;
-  description: string;
-}
-
-interface FormErrors {
-  title: string;
-  date: string;
-}
-
-const formData = ref<FormData>({
+const formData = ref<IWishlistFormData>({
   title: '',
   date: '',
   description: ''
 });
 
-const errors = ref<FormErrors>({
-  title: '',
-  date: ''
-});
-
-const validateForm = (): boolean => {
-  errors.value = {
-    title: '',
-    date: ''
-  };
-
-  let isValid = true;
-
-  if (!formData.value.title.trim()) {
-    errors.value.title = 'Название вишлиста обязательно для заполнения';
-    isValid = false;
-  }
-
-  if (!formData.value.date) {
-    errors.value.date = 'Дата события обязательна для заполнения';
-    isValid = false;
-  }
-
-  return isValid;
-};
+const errors = ref<IValidationErrors>({});
 
 const emit = defineEmits<{
-  submit: [data: FormData];
+  submit: [data: IWishlistFormData];
 }>();
 
-const handleSubmit = () => {
-  if (!validateForm()) {
+const createWishlist = () => {
+  const validationErrors = validateWishlistForm(formData.value);
+  errors.value = validationErrors;
+
+  if (Object.keys(validationErrors).length > 0) {
     return;
   }
 

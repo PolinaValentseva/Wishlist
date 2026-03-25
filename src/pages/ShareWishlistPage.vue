@@ -23,7 +23,7 @@
         :gifts="wishlist.items"
         :show-delete="false"
         :show-reserve="true"
-        @reserve="handleReserveGift"
+        @reserve="reserveGift"
       />
 
       <div class="share-page__owner-hint">
@@ -34,36 +34,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import GiftList from '@/components/wishlist/GiftList.vue';
-import { getWishlistById, updateGiftInWishlist, type Wishlist } from '@/utils/storage';
+import { useWishlist } from '@/composables/useWishlist';
+import { formatDate } from '@/utils/formatting';
 
 const route = useRoute();
 const wishlistId = route.params.id as string;
 
-const wishlist = ref<Wishlist | null>(null);
+const { getWishlist, updateGift, loadAllWishlists } = useWishlist();
+const wishlist = computed(() => getWishlist(wishlistId));
 
 onMounted(() => {
-  wishlist.value = getWishlistById(wishlistId);
+  if (!getWishlist(wishlistId)) {
+    loadAllWishlists();
+  }
 });
 
-const formatDate = (dateString: string): string => {
-  return new Date(dateString).toLocaleDateString('ru-RU', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
-};
-
-const handleReserveGift = (giftId: string) => {
-  const updated = updateGiftInWishlist(wishlistId, giftId, {
-    isReserved: true
-  });
-
-  if (updated) {
-    wishlist.value = updated;
-  }
+const reserveGift = (giftId: string) => {
+  updateGift(wishlistId, giftId, { isReserved: true });
 };
 </script>
 

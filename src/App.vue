@@ -11,14 +11,14 @@
 </template>
 
 <script setup lang="ts">
-import TheHeader from '@/components/TheHeader.vue';
-import TheFooter from '@/components/TheFooter.vue';
+import TheHeader from '@/layout/TheHeader.vue';
+import TheFooter from '@/layout/TheFooter.vue';
 
 </script>
 
 <style>
 
 .main {
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 </style>

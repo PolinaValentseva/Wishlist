@@ -14,7 +14,6 @@
                 class="burger-btn"
                 :class="{ 'burger-btn--active': isMenuOpen }"
                 @click="toggleMenu"
-                aria-label="Меню"
             >
                 <span></span>
                 <span></span>
@@ -30,7 +29,7 @@
                     </li>
                     <li class="header__menu-item">
                         <RouterLink to="/profile" @click="closeMenu">
-                            <AppButton variant="primary">Войти</AppButton>
+                            <AppButton>Войти</AppButton>
                         </RouterLink>
                     </li>
                 </ul>
@@ -40,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import AppButton from '@/components/AppButton.vue';
+import AppButton from '@/components/ui/AppButton.vue';
 import { ref } from 'vue';
 
 const isMenuOpen = ref(false);
@@ -130,7 +129,7 @@ const closeMenu = () => {
         top: 0;
         right: -100%;
         width: 100%;
-        height: 100vh;
+        height: 100dvh;
         background: var(--color-white);
         transition: right 0.3s ease;
         padding-top: 80px;

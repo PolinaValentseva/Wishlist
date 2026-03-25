@@ -8,17 +8,16 @@
 </template>
 
 <script setup lang="ts">
+type ButtonVariant = 'primary' | 'outline' | 'white' | 'outline-primary';
 
-export type ButtonVariant = 'primary' | 'outline' | 'white' | 'outline-primary'
-
-const props = defineProps<{
-  variant: ButtonVariant
-}>()
-
+const props = withDefaults(defineProps<{
+  variant?: ButtonVariant;
+}>(), {
+  variant: 'primary'
+});
 </script>
 
 <style scoped>
-
 .button {
     border: none;
     border-radius: 8px;
@@ -74,5 +73,4 @@ const props = defineProps<{
         font-size: 16px;
     }
 }
-
 </style>
