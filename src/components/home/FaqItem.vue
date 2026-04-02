@@ -6,11 +6,11 @@
         >
             <span>{{ props.question }}</span>
             <span class="icon">
-                <img src="@/assets/icons/arrow-down.svg" alt="" width="24" height="24">
+<img class="icon-svg" src="@/assets/icons/arrow-down.svg" alt="Развернуть" width="24" height="24">
             </span>
         </button>
         <div v-if="isActive" class="answer">
-            <p>{{ props.answer }}</p>
+            <p class="answer-text">{{ props.answer }}</p>
         </div>
     </div>
 </template>
@@ -32,12 +32,12 @@ const emit = defineEmits<{
     background: var(--color-white);
     border-radius: 12px;
     margin-bottom: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px var(--color-shadow-sm);
     transition: box-shadow 0.3s ease;
 }
 
 .item:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px var(--color-shadow-md);
 }
 
 .question {
@@ -49,7 +49,6 @@ const emit = defineEmits<{
     background: transparent;
     border: none;
     cursor: pointer;
-    text-align: left;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 20px;
@@ -74,10 +73,10 @@ const emit = defineEmits<{
     padding: 0 28px 24px 28px;
 }
 
-.answer p {
+.answer-text {
     font-size: 16px;
     line-height: 1.6;
-    color: var(--color-text-gray-light);
+    color: var(--color-text-70);
 }
 
 @media(max-width: 768px) {
@@ -90,7 +89,7 @@ const emit = defineEmits<{
         padding: 0 20px 20px 20px;
     }
 
-    .answer p {
+    .answer-text {
         font-size: 15px;
     }
 }
@@ -111,7 +110,7 @@ const emit = defineEmits<{
         height: 20px;
     }
 
-    .icon svg {
+    .icon-svg {
         width: 20px;
         height: 20px;
     }
@@ -120,7 +119,7 @@ const emit = defineEmits<{
         padding: 0 16px 16px 16px;
     }
 
-    .answer p {
+    .answer-text {
         font-size: 14px;
     }
 }

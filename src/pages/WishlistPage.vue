@@ -18,11 +18,11 @@
 
         <div class="wishlist-page__actions">
           <AppButton class="button" variant="outline-primary" @click="isAddModalOpen = true">
-            <img src="@/assets/icons/plus.svg" alt="" width="20" height="20">
+<img src="@/assets/icons/plus.svg" alt="Добавить подарок" width="20" height="20">
             <span>Добавить подарок</span>
           </AppButton>
           <AppButton class="button" variant="outline-primary" @click="copyLink">
-            <img src="@/assets/icons/share.svg" alt="" width="20" height="20">
+<img src="@/assets/icons/share.svg" alt="Копировать ссылку" width="20" height="20">
             <span>Копировать ссылку</span>
           </AppButton>
         </div>
@@ -110,7 +110,7 @@ const copyLink = () => {
   text-align: center;
   padding: 60px 20px;
   font-size: 18px;
-  color: var(--color-text-gray-light);
+  color: var(--color-text-70);
 }
 
 .wishlist-page__header {
@@ -136,19 +136,19 @@ const copyLink = () => {
 .wishlist-page__title {
   font-size: 36px;
   font-weight: 700;
-  color: var(--color-text-gray);
+  color: var(--color-text-100);
   margin: 0 0 12px 0;
 }
 
 .wishlist-page__date {
   font-size: 18px;
-  color: var(--color-text-gray-light);
+  color: var(--color-text-70);
   margin: 0 0 12px 0;
 }
 
 .wishlist-page__description {
   font-size: 16px;
-  color: var(--color-text-gray-light);
+  color: var(--color-text-70);
   margin: 0;
   line-height: 1.6;
 }

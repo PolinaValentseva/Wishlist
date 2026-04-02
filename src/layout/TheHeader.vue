@@ -62,7 +62,7 @@ const closeMenu = () => {
     left: 0;
     background: var(--color-white);
     width: 100%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px var(--color-shadow-md);
     z-index: 2;
 }
 

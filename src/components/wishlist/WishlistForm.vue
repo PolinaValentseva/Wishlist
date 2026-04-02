@@ -61,10 +61,10 @@ const emit = defineEmits<{
 }>();
 
 const createWishlist = () => {
-  const validationErrors = validateWishlistForm(formData.value);
+  const { errors: validationErrors, isErrors } = validateWishlistForm(formData.value);
   errors.value = validationErrors;
 
-  if (Object.keys(validationErrors).length > 0) {
+  if (isErrors) {
     return;
   }
 
@@ -86,14 +86,14 @@ const createWishlist = () => {
   margin-bottom: 8px;
   font-size: 18px;
   font-weight: 500;
-  color: var(--color-text-gray);
+  color: var(--color-text-100);
 }
 
 .form-input,
 .form-textarea {
   width: 100%;
   padding: 12px 16px;
-  border:  1px solid #c2d1dc;
+  border: 1px solid var(--color-border-light);
   border-radius: 8px;
   font-size: 16px;
   font-family: var(--font-family);
@@ -104,7 +104,7 @@ const createWishlist = () => {
 .form-input:focus,
 .form-textarea:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(248, 133, 156, 0.2);
+  box-shadow: 0 0 0 3px var(--color-primary-alpha-20);
 }
 
 .form-input--error {
@@ -112,7 +112,7 @@ const createWishlist = () => {
 }
 
 .form-input--error:focus {
-  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+  box-shadow: 0 0 0 3px var(--color-error-alpha-20);
 }
 
 .form-textarea {

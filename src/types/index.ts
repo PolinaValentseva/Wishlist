@@ -33,3 +33,8 @@ export interface IGiftFormData {
 export interface IValidationErrors {
   [key: string]: string;
 }
+
+export interface IValidationResult {
+  errors: IValidationErrors;
+  isErrors: boolean;
+} 

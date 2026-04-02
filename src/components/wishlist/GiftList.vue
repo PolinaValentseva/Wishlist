@@ -2,8 +2,8 @@
   <div class="gift-list">
     <div v-if="gifts.length === 0" class="gift-list__empty">
       <div class="decor-gift" aria-hidden="true">
-          <img src="@/assets/images/GiftList/decor-gift-small.svg" alt="" width="68" height="72">
-          <img src="@/assets/images/GiftList/decor-gift-large.svg" alt="" width="133" height="143">
+          <img src="@/assets/images/GiftList/gift-primary.svg" alt="Подарок" width="68" height="72">
+          <img src="@/assets/images/GiftList/gift-primary.svg" alt="Подарок" width="133" height="143">
       </div>
       <p>У тебя еще нет ни одного подарка.<br>Скорее исправь это!</p>
     </div>
@@ -42,7 +42,7 @@ const emit = defineEmits<{
 .gift-list__empty {
   text-align: center;
   padding: 60px 20px;
-  color: var(--color-text-gray-light);
+  color: var(--color-text-70);
   font-size: 18px;
 }
 

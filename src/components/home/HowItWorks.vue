@@ -76,7 +76,6 @@
 }
 
 .card-subtitle {
-    font-weight: 400;
     font-size: 30px;
 }
 

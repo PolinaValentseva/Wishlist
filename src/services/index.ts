@@ -1,39 +1,36 @@
 import { STORAGE_KEY } from '@/constants';
 import type { IGiftItem, IWishlist } from '@/types';
 
-export const getAllWishlists = (): IWishlist[] => {
+const readData = (): Record<string, IWishlist> => {
   const data = localStorage.getItem(STORAGE_KEY);
-  if (!data) return [];
-  
-  const parsed = JSON.parse(data);
-  return Object.values(parsed);
+  return data ? JSON.parse(data) : {};
+};
+
+const writeData = (data: Record<string, IWishlist>): void => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+};
+
+export const getAllWishlists = (): IWishlist[] => {
+  const data = readData();
+  return Object.values(data);
 };
 
 export const getWishlistById = (id: string): IWishlist | null => {
-  const data = localStorage.getItem(STORAGE_KEY);
-  if (!data) return null;
-  
-  const parsed = JSON.parse(data);
-  return parsed[id] || null;
+  const data = readData();
+  return data[id] || null;
 };
 
 export const saveWishlist = (wishlist: IWishlist): IWishlist => {
-  const data = localStorage.getItem(STORAGE_KEY);
-  const wishlists = data ? JSON.parse(data) : {};
-  
-  wishlists[wishlist.id] = wishlist;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(wishlists));
-  
+  const data = readData();
+  data[wishlist.id] = wishlist;
+  writeData(data);
   return wishlist;
 };
 
 export const deleteWishlist = (id: string): void => {
-  const data = localStorage.getItem(STORAGE_KEY);
-  if (!data) return;
-  
-  const wishlists = JSON.parse(data);
-  delete wishlists[id];
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(wishlists));
+  const data = readData();
+  delete data[id];
+  writeData(data);
 };
 
 export const addGiftToWishlist = (wishlistId: string, gift: IGiftItem): IWishlist | null => {

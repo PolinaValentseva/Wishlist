@@ -77,13 +77,13 @@ const shareWishlist = (id: string) => {
 .profile-page__title {
   font-size: 36px;
   font-weight: 700;
-  color: var(--color-text-gray);
+  color: var(--color-text-100);
   margin: 0 0 8px 0;
 }
 
 .profile-page__subtitle {
   font-size: 18px;
-  color: var(--color-text-gray-light);
+  color: var(--color-text-70);
   margin: 0;
 }
 
@@ -94,7 +94,7 @@ const shareWishlist = (id: string) => {
 
 .profile-page__empty p {
   font-size: 18px;
-  color: var(--color-text-gray-light);
+  color: var(--color-text-70);
   margin: 0 0 24px 0;
 }
 

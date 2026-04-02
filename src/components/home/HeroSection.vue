@@ -1,5 +1,5 @@
 <template>
-  <section class="hero inner">
+  <section class="hero">
     <div class="body">
         <h1 class="title">Первый шаг к идеальному подарку — твой вишлист</h1>
         <p class="subtitle">Добавляй товары из любых магазинов, делись ссылкой с друзьями и получай именно то, о чем мечтаешь.</p>
@@ -9,8 +9,8 @@
     </div>
 
     <div class="decor-gift" aria-hidden="true">
-        <img class="decor-gift-left" src="@/assets/images/HomePage/gift-svg.svg" alt="" width="175" height="193">
-        <img class="decor-gift-right" src="@/assets/images/HomePage/circle.svg" alt="" width="393" height="425">
+        <img class="decor-gift-left" src="@/assets/images/GiftList/gift-opacity.svg" alt="" width="175" height="193">
+        <img class="decor-gift-right" src="@/assets/images/GiftList/gift-opacity.svg" alt="" width="393" height="425">
     </div>
   </section>
 </template>
@@ -30,16 +30,16 @@ import AppButton from '@/components/ui/AppButton.vue';
     overflow: hidden;
 }
 
-.inner::before {
+.hero::before {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
   width: 725px;
   height: 725px;
   border-radius: 50%;
   background: var(--color-blur);
   filter: blur(200px);
-  top: 0;
-  left: 0;
   z-index: 0;
 }
 
@@ -52,13 +52,11 @@ import AppButton from '@/components/ui/AppButton.vue';
     font-weight: 800;
     font-size: 80px;
     max-width: 1230px;
-    text-align: left;
     color: var(--color-white);
     margin-bottom: 25px;
 }
 
 .subtitle {
-    font-family: var(--font-family);
     font-weight: 500;
     font-size: 35px;
     color: var(--color-white);
@@ -76,13 +74,13 @@ import AppButton from '@/components/ui/AppButton.vue';
 }
 
 @media(max-width: 1450px) {
-    .inner {
+    .hero {
         padding: 190px 60px 190px 150px;
     }
 }
 
 @media(max-width: 1250px) {
-    .inner {
+    .hero {
         padding: 190px 60px 190px 100px;
     }
 
@@ -110,17 +108,17 @@ import AppButton from '@/components/ui/AppButton.vue';
 }
 
 @media(max-width: 1100px) {
-    .inner {
+    .hero {
         margin-bottom: 100px;
     }
 }
 
 @media(max-width: 986px) {
-    .inner {
+    .hero {
         padding: 150px 70px 150px 70px;
     }
 
-    .inner::before {
+    .hero::before {
       width: 550px;
       height: 550px;
       filter: blur(150px);
@@ -151,12 +149,12 @@ import AppButton from '@/components/ui/AppButton.vue';
 }
 
 @media(max-width: 600px) {
-    .inner {
+    .hero {
         padding: 80px 40px 80px 40px;
         margin-bottom: 50px;
     }
 
-    .inner::before {
+    .hero::before {
       width: 400px;
       height: 400px;
       filter: blur(100px);
@@ -184,12 +182,12 @@ import AppButton from '@/components/ui/AppButton.vue';
 }
 
 @media(max-width: 385px) {
-    .inner {
+    .hero {
         padding: 60px 30px 60px 30px;
         margin-bottom: 50px;
     }
 
-    .inner::before {
+    .hero::before {
       width: 400px;
       height: 400px;
       filter: blur(100px);

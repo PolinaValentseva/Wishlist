@@ -1,4 +1,4 @@
-import type { IWishlistFormData, IGiftFormData, IValidationErrors } from '@/types';
+import type { IWishlistFormData, IGiftFormData, IValidationErrors, IValidationResult } from '@/types';
 
 export const isValidUrl = (url: string): boolean => {
   try {
@@ -9,7 +9,7 @@ export const isValidUrl = (url: string): boolean => {
   }
 };
 
-export const validateWishlistForm = (data: IWishlistFormData): IValidationErrors => {
+export const validateWishlistForm = (data: IWishlistFormData): IValidationResult => {
   const errors: IValidationErrors = {};
 
   if (!data.title.trim()) {
@@ -20,10 +20,11 @@ export const validateWishlistForm = (data: IWishlistFormData): IValidationErrors
     errors.date = 'Дата события обязательна для заполнения';
   }
 
-  return errors;
+  const isErrors = Object.keys(errors).length > 0;
+  return { errors, isErrors };
 };
 
-export const validateGiftForm = (data: IGiftFormData): IValidationErrors => {
+export const validateGiftForm = (data: IGiftFormData): IValidationResult => {
   const errors: IValidationErrors = {};
 
   if (!data.name.trim()) {
@@ -40,5 +41,6 @@ export const validateGiftForm = (data: IGiftFormData): IValidationErrors => {
     errors.link = 'Некорректный URL (должен начинаться с http:// или https://)';
   }
 
-  return errors;
+  const isErrors = Object.keys(errors).length > 0;
+  return { errors, isErrors };
 };

@@ -8,10 +8,10 @@
 </template>
 
 <script setup lang="ts">
-type ButtonVariant = 'primary' | 'outline' | 'white' | 'outline-primary';
+type TButtonVariant = 'primary' | 'outline' | 'white' | 'outline-primary';
 
 const props = withDefaults(defineProps<{
-  variant?: ButtonVariant;
+  variant?: TButtonVariant;
 }>(), {
   variant: 'primary'
 });
@@ -43,7 +43,7 @@ const props = withDefaults(defineProps<{
     background: var(--color-white);
     font-weight: 500;
     font-size: 22px;
-    color: var(--color-text-gray);
+    color: var(--color-text-100);
     transition-duration: 0.25s;
 }
 

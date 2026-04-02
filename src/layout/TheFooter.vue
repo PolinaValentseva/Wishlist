@@ -6,10 +6,10 @@
 
                 <div class="social">
                   <a href="#" class="social-icon">
-                    <img class="icon" src="@/assets/images/Footer/max.svg" alt="" width="40" height="40">
+<img class="icon" src="@/assets/images/Footer/max.svg" alt="Max" width="40" height="40">
                   </a>
                   <a href="#" class="social-icon">
-                    <img class="icon" src="@/assets/images/Footer/telegram.svg" alt="" width="40" height="40">
+<img class="icon" src="@/assets/images/Footer/telegram.svg" alt="Telegram" width="40" height="40">
                   </a>
                 </div>
             </div>

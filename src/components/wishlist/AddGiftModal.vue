@@ -84,7 +84,7 @@ const formData = ref<IGiftFormData>({
   name: '',
   price: undefined,
   link: '',
-  image: ''
+  image: undefined
 });
 
 const errors = ref<IValidationErrors>({});
@@ -103,10 +103,10 @@ const closeModal = () => {
 };
 
 const createGift = () => {
-  const validationErrors = validateGiftForm(formData.value);
+  const { errors: validationErrors, isErrors } = validateGiftForm(formData.value);
   errors.value = validationErrors;
 
-  if (Object.keys(validationErrors).length > 0) {
+  if (isErrors) {
     return;
   }
 
@@ -114,14 +114,14 @@ const createGift = () => {
     name: formData.value.name,
     price: formData.value.price,
     link: formData.value.link,
-    image: formData.value.image || undefined
+    image: formData.value.image
   });
 
   formData.value = {
     name: '',
     price: undefined,
     link: '',
-    image: ''
+    image: undefined
   };
 };
 </script>
@@ -140,7 +140,7 @@ const createGift = () => {
   margin-bottom: 8px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-text-gray);
+  color: var(--color-text-100);
 }
 
 .form-input {
@@ -156,7 +156,7 @@ const createGift = () => {
 
 .form-input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(248, 133, 156, 0.2);
+  box-shadow: 0 0 0 3px var(--color-primary-alpha-20);
 }
 
 .form-input--error {
@@ -164,7 +164,7 @@ const createGift = () => {
 }
 
 .form-input--error:focus {
-  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+  box-shadow: 0 0 0 3px var(--color-error-alpha-20);
 }
 
 .form-error {

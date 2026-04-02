@@ -8,7 +8,7 @@
         @click="emit('delete')"
         aria-label="Удалить подарок"
       >
-        <img src="@/assets/icons/cross.svg" alt="" width="20" height="20">
+<img src="@/assets/icons/cross.svg" alt="Удалить подарок" width="20" height="20">
       </button>
     </div>
     
@@ -59,7 +59,7 @@ const emit = defineEmits<{
 
 <style scoped>
 .gift-card {
-  border: 1px solid #c2d1dc;
+  border: 1px solid var(--color-border-light);
   border-radius: 12px;
   padding: 20px;
   background: var(--color-white);
@@ -82,7 +82,7 @@ const emit = defineEmits<{
   border: none;
   cursor: pointer;
   padding: 4px;
-  color: var(--color-text-gray);
+  color: var(--color-text-100);
   transition: color 0.25s;
   display: flex;
   align-items: center;
@@ -119,7 +119,7 @@ const emit = defineEmits<{
 }
 
 .gift-card__price--no-price {
-  color: var(--color-text-gray-light);
+  color: var(--color-text-70);
   font-weight: 400;
   font-size: 16px;
 }
@@ -153,9 +153,9 @@ const emit = defineEmits<{
 }
 
 .gift-card__reserve--reserved {
-  background: var(--color-text-gray-super-light);
-  border-color: var(--color-text-gray-super-light);
-  color: var(--color-text-gray);
+  background: var(--color-text-30);
+  border-color: var(--color-text-30);
+  color: var(--color-text-100);
   cursor: default;
 }
 </style>

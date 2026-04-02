@@ -8,14 +8,14 @@
           @click="emit('edit')"
           aria-label="Редактировать"
         >
-          <img src="@/assets/icons/edit.svg" alt="" width="20" height="20">
+<img src="@/assets/icons/edit.svg" alt="Редактировать" width="20" height="20">
         </button>
         <button
           class="wishlist-card__delete"
           @click="emit('delete')"
           aria-label="Удалить"
         >
-          <img src="@/assets/icons/cart.svg" alt="" width="20" height="20">
+<img src="@/assets/icons/cart.svg" alt="Удалить" width="20" height="20">
         </button>
       </div>
     </div>
@@ -34,7 +34,7 @@
         Открыть вишлист
       </RouterLink>
       <button class="wishlist-card__share" @click="emit('share')">
-        <img src="@/assets/icons/share.svg" alt="" width="20" height="20">
+<img src="@/assets/icons/share.svg" alt="Поделиться" width="20" height="20">
         <span>Поделиться</span>
       </button>
     </div>
@@ -75,7 +75,7 @@ const emit = defineEmits<{
 .wishlist-card__title {
   font-size: 22px;
   font-weight: 600;
-  color: var(--color-text-gray);
+  color: var(--color-text-100);
 }
 
 .wishlist-card__actions {
@@ -99,12 +99,12 @@ const emit = defineEmits<{
 
 .wishlist-card__edit:hover {
   color: var(--color-primary);
-  background: rgba(248, 133, 156, 0.1);
+  background: var(--color-primary-alpha-10);
 }
 
 .wishlist-card__delete:hover {
   color: var(--color-error);
-  background: rgba(231, 76, 60, 0.1);
+  background: var(--color-error-alpha-10);
 }
 
 .wishlist-card__body {
@@ -116,13 +116,13 @@ const emit = defineEmits<{
 
 .wishlist-card__date {
   font-size: 16px;
-  color: var(--color-text-gray-light);
+  color: var(--color-text-70);
   margin: 0 0 8px 0;
 }
 
 .wishlist-card__description {
   font-size: 14px;
-  color: var(--color-text-gray-light);
+  color: var(--color-text-70);
   margin: 0 0 12px 0;
   overflow: hidden;
 }
