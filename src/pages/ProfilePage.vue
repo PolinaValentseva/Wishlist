@@ -10,6 +10,12 @@
       </RouterLink>
     </div>
 
+    <EditWishlistModal
+      v-if="editingWishlist"
+      :wishlist="editingWishlist"
+      @close="editingWishlist = null"
+    />
+
     <div v-if="wishlists.length === 0" class="profile-page__empty">
       <p>У вас пока нет вишлистов</p>
       <RouterLink to="/create">
@@ -31,22 +37,27 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { onMounted, ref } from 'vue';
 import AppButton from '@/components/ui/AppButton.vue';
 import WishlistCard from '@/components/wishlist/WishlistCard.vue';
+import EditWishlistModal from '@/components/wishlist/EditWishlistModal.vue';
 import { useWishlist } from '@/composables/useWishlist';
 import { copyToClipboard } from '@/utils/copyToClipboard';
+import type { IWishlist } from '@/types';
 
-const router = useRouter();
-const { wishlists, loadAllWishlists, removeWishlist } = useWishlist();
+const { wishlists, loadAllWishlists, removeWishlist, getWishlist } = useWishlist();
+
+const editingWishlist = ref<IWishlist | null>(null);
 
 onMounted(() => {
   loadAllWishlists();
 });
 
 const editWishlist = (id: string) => {
-  router.push(`/wishlist/${id}`);
+  const wishlist = getWishlist(id);
+  if (wishlist) {
+    editingWishlist.value = wishlist;
+  }
 };
 
 const deleteWishlist = (id: string) => {

@@ -40,6 +40,13 @@ export function useWishlist() {
     wishlists.value = wishlists.value.filter(wishlist => wishlist.id !== id);
   };
 
+  const updateWishlist = (id: string, data: IWishlistFormData): void => {
+    const updated = services.updateWishlist(id, data);
+    if (updated) {
+      updateWishlistInArray(updated);
+    }
+  };
+
   const addGift = (wishlistId: string, gift: IGiftItem): void => {
     const updated = services.addGiftToWishlist(wishlistId, gift);
     if (updated) {
@@ -67,6 +74,7 @@ export function useWishlist() {
     getWishlist,
     createWishlist,
     removeWishlist,
+    updateWishlist,
     addGift,
     removeGift,
     updateGift

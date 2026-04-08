@@ -127,9 +127,6 @@ const createGift = () => {
 </script>
 
 <style scoped>
-.modal__form {
-  padding: 24px;
-}
 
 .form-group {
   margin-bottom: 20px;

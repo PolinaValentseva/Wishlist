@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="createWishlist" class="wishlist-form">
+  <form @submit.prevent="submitForm" class="wishlist-form">
     <div class="form-group">
       <label for="title" class="form-label">Название вишлиста</label>
       <input
@@ -37,18 +37,22 @@
     </div>
 
     <div class="form-actions">
-      <AppButton variant="primary" type="submit">Создать</AppButton>
+      <AppButton variant="primary" type="submit">{{ buttonText }}</AppButton>
     </div>
   </form>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import AppButton from '@/components/ui/AppButton.vue';
 import { validateWishlistForm } from '@/utils/validation';
 import type { IWishlistFormData, IValidationErrors } from '@/types';
 
-const formData = ref<IWishlistFormData>({
+const props = defineProps<{
+  initialData?: IWishlistFormData;
+}>();
+
+const formData = ref<IWishlistFormData>(props.initialData || {
   title: '',
   date: '',
   description: ''
@@ -56,11 +60,13 @@ const formData = ref<IWishlistFormData>({
 
 const errors = ref<IValidationErrors>({});
 
+const buttonText = computed(() => props.initialData ? 'Сохранить' : 'Создать');
+
 const emit = defineEmits<{
   submit: [data: IWishlistFormData];
 }>();
 
-const createWishlist = () => {
+const submitForm = () => {
   const { errors: validationErrors, isErrors } = validateWishlistForm(formData.value);
   errors.value = validationErrors;
 
@@ -74,7 +80,8 @@ const createWishlist = () => {
 
 <style scoped>
 .wishlist-form {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .form-group {

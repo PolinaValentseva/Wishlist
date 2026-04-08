@@ -4,10 +4,12 @@
       <div class="modal__header">
         <h2 class="modal__title">{{ title }}</h2>
         <button class="modal__close" @click="emit('close')">
-<img src="@/assets/icons/cross.svg" alt="Закрыть" width="24" height="24">
+          <img src="@/assets/icons/cross.svg" alt="Закрыть" width="24" height="24">
         </button>
       </div>
-      <slot></slot>
+      <div class="modal__content">
+        <slot></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -77,5 +79,9 @@ const emit = defineEmits<{
 
 .modal__close:hover {
   color: var(--color-text-100);
+}
+
+.modal__content {
+  padding: 24px;
 }
 </style>

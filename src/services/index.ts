@@ -33,6 +33,19 @@ export const deleteWishlist = (id: string): void => {
   writeData(data);
 };
 
+export const updateWishlist = (id: string, updates: Partial<IWishlist>): IWishlist | null => {
+  const wishlist = getWishlistById(id);
+  if (!wishlist) return null;
+
+  const updatedWishlist = {
+    ...wishlist,
+    ...updates
+  };
+
+  saveWishlist(updatedWishlist);
+  return updatedWishlist;
+};
+
 export const addGiftToWishlist = (wishlistId: string, gift: IGiftItem): IWishlist | null => {
   const wishlist = getWishlistById(wishlistId);
   if (!wishlist) return null;
