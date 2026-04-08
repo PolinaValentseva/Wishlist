@@ -116,13 +116,6 @@ const createGift = () => {
     link: formData.value.link,
     image: formData.value.image
   });
-
-  formData.value = {
-    name: '',
-    price: undefined,
-    link: '',
-    image: undefined
-  };
 };
 </script>
 
@@ -137,7 +130,7 @@ const createGift = () => {
   margin-bottom: 8px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-text-100);
+  color: var(--color-text-900);
 }
 
 .form-input {

@@ -75,7 +75,7 @@ const emit = defineEmits<{
 .wishlist-card__title {
   font-size: 22px;
   font-weight: 600;
-  color: var(--color-text-100);
+  color: var(--color-text-900);
 }
 
 .wishlist-card__actions {
@@ -116,13 +116,13 @@ const emit = defineEmits<{
 
 .wishlist-card__date {
   font-size: 16px;
-  color: var(--color-text-70);
+  color: var(--color-text-600);
   margin: 0 0 8px 0;
 }
 
 .wishlist-card__description {
   font-size: 14px;
-  color: var(--color-text-70);
+  color: var(--color-text-600);
   margin: 0 0 12px 0;
   overflow: hidden;
 }

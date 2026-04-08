@@ -76,7 +76,7 @@ const emit = defineEmits<{
 .answer-text {
     font-size: 16px;
     line-height: 1.6;
-    color: var(--color-text-70);
+    color: var(--color-text-600);
 }
 
 @media(max-width: 768px) {

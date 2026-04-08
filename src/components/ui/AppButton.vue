@@ -43,7 +43,7 @@ const props = withDefaults(defineProps<{
     background: var(--color-white);
     font-weight: 500;
     font-size: 22px;
-    color: var(--color-text-100);
+    color: var(--color-text-900);
     transition-duration: 0.25s;
 }
 

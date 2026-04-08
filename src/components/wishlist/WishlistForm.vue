@@ -93,7 +93,7 @@ const submitForm = () => {
   margin-bottom: 8px;
   font-size: 18px;
   font-weight: 500;
-  color: var(--color-text-100);
+  color: var(--color-text-900);
 }
 
 .form-input,

@@ -17,7 +17,7 @@ export function useWishlist() {
     wishlists.value = services.getAllWishlists();
   };
 
-  const getWishlist = (id: string): IWishlist | undefined => {
+  const getWishlistById = (id: string): IWishlist | undefined => {
     return wishlists.value.find(wishlist => wishlist.id === id);
   };
 
@@ -35,12 +35,12 @@ export function useWishlist() {
     return newWishlist;
   };
 
-  const removeWishlist = (id: string): void => {
+  const removeWishlistById = (id: string): void => {
     services.deleteWishlist(id);
     wishlists.value = wishlists.value.filter(wishlist => wishlist.id !== id);
   };
 
-  const updateWishlist = (id: string, data: IWishlistFormData): void => {
+  const updateWishlistById = (id: string, data: IWishlistFormData): void => {
     const updated = services.updateWishlist(id, data);
     if (updated) {
       updateWishlistInArray(updated);
@@ -71,10 +71,10 @@ export function useWishlist() {
   return {
     wishlists,
     loadAllWishlists,
-    getWishlist,
+    getWishlistById,
     createWishlist,
-    removeWishlist,
-    updateWishlist,
+    removeWishlistById,
+    updateWishlistById,
     addGift,
     removeGift,
     updateGift

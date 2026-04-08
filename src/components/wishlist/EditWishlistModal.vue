@@ -13,7 +13,7 @@ import WishlistForm from '@/components/wishlist/WishlistForm.vue';
 import { useWishlist } from '@/composables/useWishlist';
 import type { IWishlist, IWishlistFormData } from '@/types';
 
-const { updateWishlist } = useWishlist();
+const { updateWishlistById } = useWishlist();
 
 const props = defineProps<{
   wishlist: IWishlist;
@@ -30,7 +30,7 @@ const initialData: IWishlistFormData = {
 };
 
 const submitForm = (data: IWishlistFormData) => {
-  updateWishlist(props.wishlist.id, data);
+  updateWishlistById(props.wishlist.id, data);
   emit('close');
 };
 </script>

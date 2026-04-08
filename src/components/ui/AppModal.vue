@@ -59,7 +59,7 @@ const emit = defineEmits<{
 .modal__title {
   font-size: 24px;
   font-weight: 600;
-  color: var(--color-text-100);
+  color: var(--color-text-900);
   margin: 0;
 }
 
@@ -78,7 +78,7 @@ const emit = defineEmits<{
 }
 
 .modal__close:hover {
-  color: var(--color-text-100);
+  color: var(--color-text-900);
 }
 
 .modal__content {

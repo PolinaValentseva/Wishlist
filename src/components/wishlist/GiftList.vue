@@ -42,7 +42,7 @@ const emit = defineEmits<{
 .gift-list__empty {
   text-align: center;
   padding: 60px 20px;
-  color: var(--color-text-70);
+  color: var(--color-text-600);
   font-size: 18px;
 }
 

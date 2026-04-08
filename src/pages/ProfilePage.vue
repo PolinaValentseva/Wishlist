@@ -45,7 +45,7 @@ import { useWishlist } from '@/composables/useWishlist';
 import { copyToClipboard } from '@/utils/copyToClipboard';
 import type { IWishlist } from '@/types';
 
-const { wishlists, loadAllWishlists, removeWishlist, getWishlist } = useWishlist();
+const { wishlists, loadAllWishlists, removeWishlistById, getWishlistById } = useWishlist();
 
 const editingWishlist = ref<IWishlist | null>(null);
 
@@ -54,14 +54,14 @@ onMounted(() => {
 });
 
 const editWishlist = (id: string) => {
-  const wishlist = getWishlist(id);
+  const wishlist = getWishlistById(id);
   if (wishlist) {
     editingWishlist.value = wishlist;
   }
 };
 
 const deleteWishlist = (id: string) => {
-  removeWishlist(id);
+  removeWishlistById(id);
 };
 
 const shareWishlist = (id: string) => {
@@ -88,13 +88,13 @@ const shareWishlist = (id: string) => {
 .profile-page__title {
   font-size: 36px;
   font-weight: 700;
-  color: var(--color-text-100);
+  color: var(--color-text-900);
   margin: 0 0 8px 0;
 }
 
 .profile-page__subtitle {
   font-size: 18px;
-  color: var(--color-text-70);
+  color: var(--color-text-600);
   margin: 0;
 }
 
@@ -105,7 +105,7 @@ const shareWishlist = (id: string) => {
 
 .profile-page__empty p {
   font-size: 18px;
-  color: var(--color-text-70);
+  color: var(--color-text-600);
   margin: 0 0 24px 0;
 }
 

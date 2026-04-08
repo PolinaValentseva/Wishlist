@@ -82,7 +82,7 @@ const emit = defineEmits<{
   border: none;
   cursor: pointer;
   padding: 4px;
-  color: var(--color-text-100);
+  color: var(--color-text-900);
   transition: color 0.25s;
   display: flex;
   align-items: center;
@@ -119,7 +119,7 @@ const emit = defineEmits<{
 }
 
 .gift-card__price--no-price {
-  color: var(--color-text-70);
+  color: var(--color-text-600);
   font-weight: 400;
   font-size: 16px;
 }
@@ -153,9 +153,9 @@ const emit = defineEmits<{
 }
 
 .gift-card__reserve--reserved {
-  background: var(--color-text-30);
-  border-color: var(--color-text-30);
-  color: var(--color-text-100);
+  background: var(--color-text-300);
+  border-color: var(--color-text-300);
+  color: var(--color-text-900);
   cursor: default;
 }
 </style>

@@ -61,12 +61,12 @@ import type { IGiftItem } from '@/types';
 const route = useRoute();
 const wishlistId = route.params.id as string;
 
-const { getWishlist, addGift, removeGift, loadAllWishlists } = useWishlist();
-const wishlist = computed(() => getWishlist(wishlistId));
+const { getWishlistById, addGift, removeGift, loadAllWishlists } = useWishlist();
+const wishlist = computed(() => getWishlistById(wishlistId));
 const isAddModalOpen = ref(false);
 
 onMounted(() => {
-  if (!getWishlist(wishlistId)) {
+  if (!getWishlistById(wishlistId)) {
     loadAllWishlists();
   }
 });
@@ -110,7 +110,7 @@ const copyLink = () => {
   text-align: center;
   padding: 60px 20px;
   font-size: 18px;
-  color: var(--color-text-70);
+  color: var(--color-text-600);
 }
 
 .wishlist-page__header {
@@ -136,19 +136,19 @@ const copyLink = () => {
 .wishlist-page__title {
   font-size: 36px;
   font-weight: 700;
-  color: var(--color-text-100);
+  color: var(--color-text-900);
   margin: 0 0 12px 0;
 }
 
 .wishlist-page__date {
   font-size: 18px;
-  color: var(--color-text-70);
+  color: var(--color-text-600);
   margin: 0 0 12px 0;
 }
 
 .wishlist-page__description {
   font-size: 16px;
-  color: var(--color-text-70);
+  color: var(--color-text-600);
   margin: 0;
   line-height: 1.6;
 }
